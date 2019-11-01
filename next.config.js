@@ -6,6 +6,7 @@ const withLess = require("@zeit/next-less");
 const lessToJS = require("less-vars-to-js");
 const fs = require("fs");
 const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 // Where your antd-custom.less file lives
 // const themeVariables = lessToJS(fs.readFileSync(path.resolve(__dirname, "./assets/antd-custom.less"), "utf8"));
@@ -36,6 +37,8 @@ module.exports = withPlugins([withSass, withLess], {
         use: "null-loader"
       });
     }
+    //清除.next文件夹下的文件
+    // config.plugins.push(new CleanWebpackPlugin([".next"]));
     return config;
   }
 });

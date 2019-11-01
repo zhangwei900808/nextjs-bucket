@@ -1,0 +1,12 @@
+.layout-container {
+    .layout-ul {
+        display: flex;
+        margin: 10px;
+
+        li {
+            padding: 10px;
+            background: #ddd;
+            list-style: none;
+        }
+    }
+}

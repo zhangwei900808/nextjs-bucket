@@ -6,7 +6,9 @@ import withReduxSaga from "next-redux-saga";
 import { fromJS } from "immutable";
 import configureStore from "../redux/store";
 
-class MyApp extends App {
+@withRedux(configureStore)
+@withReduxSaga
+class NextApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
     if (Component.getInitialProps) {
@@ -27,4 +29,4 @@ class MyApp extends App {
   }
 }
 
-export default withRedux(configureStore)(withReduxSaga(MyApp));
+export default NextApp;
